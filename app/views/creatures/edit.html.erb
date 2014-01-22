@@ -1,0 +1,13 @@
+   <form action="/creatures/<%= @creature.id %>" method="post">
+   	<input type="hidden" name= "_method" value="put"> 
+   	<!-- you need a put rather than a post, but since put is not a valid http verb, we write a hack where rails recognizes that you didn't mean post, you meant put, which is then defined in the routes. -->
+    	<label> Name: </label> 
+    	<input type="text" name="creature[name]" value="<%= @creature.name %>" > <br>
+	    <label> Description: </label><br> 
+	    <textarea name="creature[description]"><%= @creature.description %></textarea><br>
+
+    	<!-- authenticty tag -->
+    	<%= token_tag form_authenticity_token %>
+
+    	<button> Update creature </button>
+    </form>
