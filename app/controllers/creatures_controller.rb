@@ -20,7 +20,7 @@ class CreaturesController < ApplicationController
 
   def show
   	creature_id = params[:id]
-  	Creature.find(creature_id)
+  	@creature = Creature.find(creature_id)
   	render :show
   end
 
