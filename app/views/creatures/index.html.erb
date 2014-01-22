@@ -1,7 +1,34 @@
+<h1>Welcome to iBog!</h1>
+
+<div>
+	<h2> Please add, delete, or update a creature you observed in your bog </h2>
+</div>
+	
+<div>
+	<p>
+	  <form action="/creatures/new" method="get">
+	  	<input type="submit" name="" value="Add a new boggy creature.">
+	  	<%= token_tag form_authenticity_token %>
+	  </form>
+	</p>
+</div>
+
 <% @creatures.each do |creature| %>
 
 	<div>
 		Name: <%= creature[:name] %> <br>
-		Description: <%= creature[:description] %>
+		Description: <%= creature[:description] %> <br>
+	<p>
+	  <form action="/creatures/<%= creature[:id] %>/destroy" method="post">
+	  	<input type="submit" name="" value="Delete this creature.">
+	  	<%= token_tag form_authenticity_token %>
+	  </form>
+	</p>
 	</div>
+
+
 <% end %>
+
+
+
+
