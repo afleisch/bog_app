@@ -42,9 +42,11 @@ class CreaturesController < ApplicationController
 
   def delete
   	creature_id= params[:id]
-  	creature = Creature.find(creature_id)
-	creature.delete
-  	redirect_to "/creatures"
+  	@creature = Creature.find(creature_id)
+  	@name = @creature[:name]
+	@creature.delete
+	render :delete
+  	# redirect_to "/creatures"
 
   end
 
