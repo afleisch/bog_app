@@ -12,7 +12,7 @@ BogApp::Application.routes.draw do
 
   post "/creatures", to: "creatures#create"
 
-
+  put "/creatures/:id", to: "creatures#update"
 
 
 
