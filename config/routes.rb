@@ -14,6 +14,10 @@ BogApp::Application.routes.draw do
 
   put "/creatures/:id", to: "creatures#update"
 
+  post "/creatures/:id/destroy", to: "creatures#delete"
+
+
+
 
 
 
