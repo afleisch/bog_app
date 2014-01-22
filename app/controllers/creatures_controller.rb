@@ -3,6 +3,7 @@ class CreaturesController < ApplicationController
   def index
   	@creatures = Creature.all
 	render :index
+  
   end
 
   def new
@@ -14,8 +15,13 @@ class CreaturesController < ApplicationController
   	creature = params.require(:creature).permit(:name, :description)
   	Creature.create(creature)
   	redirect_to "/creatures"
+  
+  end
 
-
+  def show
+  	creature_id = params[:id]
+  	Creature.find(creature_id)
+  	render :show
   end
 
 
