@@ -24,6 +24,17 @@ class CreaturesController < ApplicationController
   	render :show
   end
 
+  def edit
+  	creature_id = params[:id]
+  	Creature.find(creature_id)
+  	render :edit
+  end
+
+
+
+  
+  end
+
 
 
 
