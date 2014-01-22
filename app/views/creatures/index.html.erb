@@ -24,6 +24,12 @@
 	  	<%= token_tag form_authenticity_token %>
 	  </form>
 	</p>
+	<p>
+	  <form action="/creatures/<%= creature[:id] %>/edit" method="get">
+	  	<input type="submit" name="" value="Update this creature.">
+	  	<%= token_tag form_authenticity_token %>
+	  </form>
+	</p>
 	</div>
 
 
