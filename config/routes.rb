@@ -8,6 +8,8 @@ BogApp::Application.routes.draw do
 
   get "/creatures/:id", to: "creatures#show"
 
+  get "/creatures/:id/edit", to: "creatures#edit"
+
   post "/creatures", to: "creatures#create"
 
 
