@@ -1,6 +1,21 @@
-<h1>Welcome to iBog!</h1>
+<div class="navbar navbar-fixed-top">  
+  <div class="navbar-inner">  
+    <div class="container">  
+   <ul class="nav">  
+    <li class="active">  
+     <a class="brand" href="/">iBog</a>  
+    </li>  
+    <li><a href="/creatures">Creatures</a></li>  
+    <li><a href="/creatures/new">Edit A Creature</a></li>   
+   </ul> 
+    </div>  
+  </div>  
+</div> 
+
+
 
 <div>
+	<h1>Welcome to iBog!</h1>
 	<h2> Please add, delete, or update a creature you observed in your bog </h2>
 </div>
 	
@@ -23,10 +38,9 @@
 	  	<input type="submit" name="" value="Delete this creature.">
 	  	<%= token_tag form_authenticity_token %>
 	  </form>
-	</p>
-	<p>
+
 	  <form action="/creatures/<%= creature[:id] %>/edit" method="get">
-	  	<input type="submit" name="" value="Update this creature.">
+	  	<input type="submit" name="" value="Edit this creature.">
 	  	<%= token_tag form_authenticity_token %>
 	  </form>
 	</p>
