@@ -44,8 +44,8 @@ class CreaturesController < ApplicationController
   	creature_id= params[:id]
   	@creature = Creature.find(creature_id)
   	@name = @creature[:name]
-	@creature.delete
-	render :delete
+	 @creature.destroy
+	 render :delete
   	# redirect_to "/creatures"
 
   end
